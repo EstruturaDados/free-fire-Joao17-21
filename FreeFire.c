@@ -1,70 +1,79 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <stdbool.h>
 
-// Código da Ilha – Edição Free Fire
-// Nível: Mestre
-// Este programa simula o gerenciamento avançado de uma mochila com componentes coletados durante a fuga de uma ilha.
-// Ele introduz ordenação com critérios e busca binária para otimizar a gestão dos recursos.
+#define MAX_ITENS 10
+
+// Estrutura do item
+typedef struct {
+    char nome[50];
+    char tipo[30];
+    int quantidade;
+} Item;
 
 int main() {
-    // Menu principal com opções:
-    // 1. Adicionar um item
-    // 2. Remover um item
-    // 3. Listar todos os itens
-    // 4. Ordenar os itens por critério (nome, tipo, prioridade)
-    // 5. Realizar busca binária por nome
-    // 0. Sair
+    Item mochila[MAX_ITENS];
+    int total = 0;
+    int opcao;
 
-    // A estrutura switch trata cada opção chamando a função correspondente.
-    // A ordenação e busca binária exigem que os dados estejam bem organizados.
+    do {
+        printf("\n=== 🏝️ MOCHILA DE SOBREVIVÊNCIA – NÍVEL NOVATO ===\n");
+        printf("1️⃣  Adicionar item\n");
+        printf("2️⃣  Remover item\n");
+        printf("3️⃣  Listar itens\n");
+        printf("0️⃣  Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+        getchar(); // limpa o buffer do Enter
 
-    return 0;
-}
+        switch (opcao) {
+            case 1: // Adicionar item
+                if (total >= MAX_ITENS) {
+                    printf("\n⚠️  A mochila está cheia!\n");
+                } else {
+                    printf("\nDigite o nome do item: ");
+                    fgets(mochila[total].nome, 50, stdin);
 
-// Struct Item:
-// Representa um componente com nome, tipo, quantidade e prioridade (1 a 5).
-// A prioridade indica a importância do item na montagem do plano de fuga.
+#include <stdio.h>
+#include <string.h>
 
-// Enum CriterioOrdenacao:
-// Define os critérios possíveis para a ordenação dos itens (nome, tipo ou prioridade).
+#define MAX_ITENS 10
 
-// Vetor mochila:
-// Armazena até 10 itens coletados.
-// Variáveis de controle: numItens (quantidade atual), comparacoes (análise de desempenho), ordenadaPorNome (para controle da busca binária).
+// Estrutura do item
+typedef struct {
+    char nome[50];
+    char tipo[30];
+    int quantidade;
+} Item;
 
-// limparTela():
-// Simula a limpeza da tela imprimindo várias linhas em branco.
+int main() {
+    Item mochila[MAX_ITENS];
+    int total = 0;
+    int opcao;
 
-// exibirMenu():
-// Apresenta o menu principal ao jogador, com destaque para status da ordenação.
+    do {
+        printf("\n=== 🏝️ MOCHILA DE SOBREVIVÊNCIA – NÍVEL AVENTUREIRO ===\n");
+        printf("1️⃣  Adicionar item\n");
+        printf("2️⃣  Remover item\n");
+        printf("3️⃣  Listar itens\n");
+        printf                    mochila[total].nome[strc
 
-// inserirItem():
-// Adiciona um novo componente à mochila se houver espaço.
-// Solicita nome, tipo, quantidade e prioridade.
-// Após inserir, marca a mochila como "não ordenada por nome".
 
-// removerItem():
-// Permite remover um componente da mochila pelo nome.
-// Se encontrado, reorganiza o vetor para preencher a lacuna.
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 
-// listarItens():
-// Exibe uma tabela formatada com todos os componentes presentes na mochila.
+#define MAX_ITENS 10
 
-// menuDeOrdenacao():
-// Permite ao jogador escolher como deseja ordenar os itens.
-// Utiliza a função insertionSort() com o critério selecionado.
-// Exibe a quantidade de comparações feitas (análise de desempenho).
+// Enum para critério de ordenação
+typedef enum {
+    NOME = 1,
+    TIPO,
+    PRIORIDADE
+} Criterio;
 
-// insertionSort():
-// Implementação do algoritmo de ordenação por inserção.
-// Funciona com diferentes critérios de ordenação:
-// - Por nome (ordem alfabética)
-// - Por tipo (ordem alfabética)
-// - Por prioridade (da mais alta para a mais baixa)
-
-// buscaBinariaPorNome():
-// Realiza busca binária por nome, desde que a mochila esteja ordenada por nome.
-// Se encontrar, exibe os dados do item buscado.
-// Caso contrário, informa que não encontrou o item.
+// Estrutura do item
+typedef struct {
+    char nome[50];
+    char tipo[30];
+    int quantidade;
+    int prioridade; // de
